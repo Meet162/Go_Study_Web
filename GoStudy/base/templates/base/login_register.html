@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}
+
+
+<div>
+    <form action="" method="POST">
+
+        {% csrf_token %}
+    <label for="">UserName:</label>
+    <input type="username" name="username" placeholder="Enter Username" required/>
+    
+    <label for="">Password:</label>
+    <input type="password" name="password" placeholder="Enter Password" required/>
+
+        <input type="submit" value="Login" />
+</form>
+</div>
+<div>
+        <p> Haven't Sign Up Yet !!</p>
+        <a href="{% url 'register' %}">Sign Up</a>
+
+</div>
+{% else %}
+
+<div>
+<form action="" method="POST">
+
+        {% csrf_token %}
+        {{  form.as_p  }}
+<!-- as_p grab the paragraph tag for better styling -->
+
+
+    <input type="submit" value="Register" />
+</form>
+    <p> Already Sign Up !!</p>
+    <a href="{% url 'login' %}">Login</a>
+
+</div>
+
+{% endif %}
+
+{% endblock content %}
+
+
+<!-- pass: gj019517, danial123 -->

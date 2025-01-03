@@ -1,0 +1,11 @@
+project_file>
+urls.py == used to manage the my_app url(only 1 url at each app)
+setting.py == used to manage all setting i.e. 1.add the app_name to installed_app, 2.static file adding to ?
+manage.py == special file for cmd tools, migration
+
+my_app> python manage.py startapp test_1
+admin.py> register database model to view in admin panel
+model.py> place database model
+view.py> 
+apps.py> 
+urls.py> place urls and connecting to the view.py

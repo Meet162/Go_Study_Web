@@ -1,0 +1,14 @@
+View:
+the home view define the 
+
+Authenticatiob:
+Django Use Session Based Authentication : 
+Flow: Provide data- goes backend - backend(db-table in django.contib.Session)
+When Login: then : Session token created: store the info of a user: all data in it.
+
+
+to send the request of a do something
+
+
+if request.method == 'post'
+    

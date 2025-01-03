@@ -1,0 +1,82 @@
+py based web framework
+server side
+fast
+heavy-weight framework
+large library
+
+framework = modulo, pkg, library to spped deveopment
+
+need of django: e commerce, api, insta, youtube, 
+
+
+MVT Structure : web : url : views : modules :: templates
+model, view, templates == MVT
+
+
+
+WSGi : web server interface
+asgi : asynchronous 
+
+app = different components of a project
+i.e {
+    project : p ,r,o,j,e,c,t
+}
+
+
+setting.py by the app{base}
+    'base.apps.BaseConfig', 
+    # base == app, app == file, BaseConfig == class of app.py
+
+===================================================
+to add a one html to another html use
+{% include 'page_name.html' %}
+===================================================
+there is a concept called templates inheritence that take html from one to other
+=======================
+block start with 
+{% block content %}
+
+
+block end with
+{% endblock content %}
+=======================
+django template engine
+
+{{var}}
+=======================
+Tags : kinda conditional statment 
+provide the logic in the rendering process,
+use in the if or for statment etc(logical tags)
+"{ % ____ % }"
+Types of the Tags:
+1. Control Flow Tags
+2. Inclusion & Extending Templates
+3. Utility Tags
+4. Iteration-Specific Tags
+5. Custom Tags
+======================
+{% csrf_token %}
+{% tags %}
+{% %}
+========================================
+Django TAG are not design & use for the heavy logic statment.
+i.e {% array= [ 1,2,3,4, ] %} === WRONG statment
+i.e {% var %} == RIGHT statment, it does not need the start or end tag
+==============================================
+dynamic url routing: USE AS A different url by modify the url to add key and fetch by the from view
+" <str:pk>/ "=== id of the app/url.py for room def ::: id value of the app/view.py "def room(request, pk)" 
+i.e <slug:pk>/ :::  i.e <int:pk>/  :::  where "pk" use in the DataBase
+(urls) == path('room/<str:pk>/', views.room, name="room") ::: (view) == def room(request, pk)
+///
+Use for Url With different key, i.e Home/1, Home/2 etc..
+===============================================
+The Room is the databse called Table_Room  wherer store all the DataBase
+==================================================
+function bases views instead of the class bases views
+model_form == 
+
+========
+Message_form == where message is the table has a user, room, body: view_column
+
+the def__str__ was a constructor that satisfied the certain the column with the properties
+The system has a Specific model i.e Topic, Room, Message, has a properties

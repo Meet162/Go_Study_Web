@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Study</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% if messages %}
+    <ul class="messages">
+
+        {% for messages in messages %}
+        <li {% if messages.tags %} class="{{messages.tags}}" {% endif %}>{{messages}}</li>
+        {% endfor %}
+
+
+    </ul>
+    {% endif %}
+
+    
+    <!-- add html file -->
+    {% block content %}
+    <!-- called a block -->
+    {% endblock %}
+
+</body>
+</html>

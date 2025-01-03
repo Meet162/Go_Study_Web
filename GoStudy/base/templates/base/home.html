@@ -1,0 +1,77 @@
+{% extends 'main.html' %}
+<!-- to extends the html here -->
+
+{% block content %}
+<style>
+
+.home-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+</style>
+<div class="home-container">
+
+    <div> 
+        <h3>Browse Topics</h3>
+        <hr>
+
+        <div>
+            <a href="{% url 'home' %}"> All </a>
+        </div>
+
+        {% for topic in topics %}
+        <div>
+            <a href="{% url 'home' %}?q={{topic.name}}"> {{topic.name}} </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div>
+
+<h1>Home Templates</h1>
+<div>
+    <div>
+        <!-- {% for room in rooms  %} -->
+
+        <div>
+
+            <h5>{{room_count}} rooms available</h5>
+            <!-- define the room_count that define the number of room available -->
+            <a href="{% url 'createRoom' %}">Create Room</a>
+
+            <div>
+                {% if request.user == room.host %}
+                <a href="{% url 'updateRoom' room.id %}">Edit</a>
+                <a href="{% url 'deleteRoom' room.id %}">Delete</a>
+                {% endif %}
+                
+                <!-- for the updation of the room -->
+
+                <!-- {% for room in rooms %} -->
+                <span>@{{room.host.username}}</span>
+                <!-- @name == @meet on display-->
+                <a href="{% url 'room' room.id %}">
+                    <h1> {{room.id}} -- {{room.name}} </h1>
+                </a>
+
+                <small>{{room.topic.name}}</small>
+                <!-- for thos topic display -->
+                <!-- {% endfor %} -->
+            </div>
+
+            <hr>
+        </div>
+        <!-- {% endfor %} -->
+
+        <!-- <h1>{{ tag }}</h1> -->
+
+    </div>
+
+
+    </div>
+</div>
+
+{% endblock content %}
+<!-- {% include 'navbar.html' %} === is to add the html page here-->
